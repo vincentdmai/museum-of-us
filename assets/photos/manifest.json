@@ -1,0 +1,47 @@
+{
+  "paintings": [
+    {
+      "id": "muse",
+      "photo": "assets/photos/2022-MUSE.JPG",
+      "caption": "Our First Photo Together! (3rd Date) ❤️",
+      "date": "November 2022",
+      "frameColor": "#c0a060",
+      "objectPosition": "50% 15%"
+    },
+    {
+      "id": "nyc",
+      "photo": "assets/photos/2023-NYC.JPG",
+      "caption": "NYC Day Trip for Lisa's Birthday 🎉",
+      "date": "February 2023",
+      "frameColor": "#4a7c8b"
+    },
+    {
+      "id": "burnside",
+      "photo": "assets/photos/2023-BURNSIDE.JPG",
+      "caption": "Burnside Farms - Starting Our Journal as a Couple 🌾",
+      "date": "April 2023",
+      "frameColor": "#8b6b4a"
+    },
+    {
+      "id": "la",
+      "photo": "assets/photos/2023-LA.JPG",
+      "caption": "The best trip ever to California!",
+      "date": "August 2023",
+      "frameColor": "#6b4a8b"
+    },
+    {
+      "id": "japan",
+      "photo": "assets/photos/2024-JP.JPG",
+      "caption": "First international trip together to Japan",
+      "date": "September 2024",
+      "frameColor": "#4a8b5a"
+    },
+    {
+      "id": "hawaii",
+      "photo": "assets/photos/2026-HI.JPG",
+      "caption": "Our beautiful adventure in Hawaii 🌺",
+      "date": "February 2026",
+      "frameColor": "#8b4a4a"
+    }
+  ]
+}
