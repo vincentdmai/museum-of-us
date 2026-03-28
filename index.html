@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Museum of Us ♥</title>
+
+    <!-- Pixel fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phaser 3 (pinned minor for stability) -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- CRT scanline overlay -->
+    <div id="scanlines"></div>
+
+    <!-- Phaser canvas mounts here -->
+    <div id="game-container"></div>
+
+    <!-- DOM photo modal (managed by PhotoModal.js) -->
+    <!-- injected dynamically by PhotoModal constructor -->
+
+    <!-- Hover hint bubble -->
+    <div id="hint-bubble">🖱 CLICK to view memory</div>
+
+    <!-- Game bootstrap (ES modules) -->
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
