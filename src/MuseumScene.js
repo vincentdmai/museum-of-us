@@ -78,35 +78,35 @@ const GROUND_LAYER = [
 // Furniture / decor object layer [tileX, tileY, tileIndex, collides]
 const OBJECTS = [
   // Windows — between paintings (cols 3, 8, 10, 14)
-  [5,  0, WINDOW,       false],
-  [6,  0, WINDOW,       false],
-  [12, 0, WINDOW,       false],
-  [13, 0, WINDOW,       false],
+  [5, 0, WINDOW, false],
+  [6, 0, WINDOW, false],
+  [12, 0, WINDOW, false],
+  [13, 0, WINDOW, false],
   // Lamps — in wall row, collides:false to avoid spilling into walkable row 3
-  [1,  1, LAMP,         false],
-  [14, 1, LAMP,         false],
+  [1, 1, LAMP, false],
+  [14, 1, LAMP, false],
   // Plants — same reasoning
-  [2,  1, PLANT,        false],
-  [13, 1, PLANT,        false],
+  [2, 1, PLANT, false],
+  [13, 1, PLANT, false],
   // Conversation pit — 5-wide sectional sofa (cols 4-8, row 4)
-  [4,  4, COUCH_L,      true],
-  [5,  4, COUCH_M,      true],
-  [6,  4, COUCH_M,      true],
-  [7,  4, COUCH_M,      true],
-  [8,  4, COUCH_R,      true],
+  [4, 4, COUCH_L, true],
+  [5, 4, COUCH_M, true],
+  [6, 4, COUCH_M, true],
+  [7, 4, COUCH_M, true],
+  [8, 4, COUCH_R, true],
   // Side table right of pit
-  [10, 4, TABLE,        true],
+  [10, 4, TABLE, true],
   // Spacious coffee table (plain | magazine | matcha | plain)
-  [5,  6, COFFEE_TBL,   false],
-  [6,  6, COFFEE_MAG,   false],
-  [7,  6, COFFEE_MATCHA,false],
-  [8,  6, COFFEE_TBL,   false],
+  [5, 6, COFFEE_TBL, false],
+  [6, 6, COFFEE_MAG, false],
+  [7, 6, COFFEE_MATCHA, false],
+  [8, 6, COFFEE_TBL, false],
   // Floor cushions flanking the table
-  [4,  7, CUSHION,      false],
-  [9,  7, CUSHION,      false],
+  [4, 7, CUSHION, false],
+  [9, 7, CUSHION, false],
   // Corner plants
-  [1,  9, PLANT,        false],
-  [14, 9, PLANT,        false],
+  [1, 9, PLANT, false],
+  [14, 9, PLANT, false],
 ];
 
 // Painting positions [tileX (wall col), paintingIndex]
@@ -452,54 +452,54 @@ export default class MuseumScene extends Phaser.Scene {
       // ── Coffee table ──────────────────────────────────────────────────────
       case COFFEE_TBL:
         rect(0, 0, 16, 16, 0xd4bc94);
-        rect(0, 6, 16, 2,  0x6a4020);
-        rect(0, 8, 16, 5,  0xe8d4a0);
-        rect(0, 8, 16, 1,  0xf4e8b8);
+        rect(0, 6, 16, 2, 0x6a4020);
+        rect(0, 8, 16, 5, 0xe8d4a0);
+        rect(0, 8, 16, 1, 0xf4e8b8);
         rect(0, 13, 16, 3, 0xc4a060);
-        rect(1, 13, 2,  3, 0x5a3010);
+        rect(1, 13, 2, 3, 0x5a3010);
         rect(13, 13, 2, 3, 0x5a3010);
-        rect(5, 9,  6,  4, 0xf0e8d8);
-        rect(6, 10, 4,  2, 0xe0d4c8);
+        rect(5, 9, 6, 4, 0xf0e8d8);
+        rect(6, 10, 4, 2, 0xe0d4c8);
         break;
       case COFFEE_MAG:
         rect(0, 0, 16, 16, 0xd4bc94);
-        rect(0, 6, 16, 2,  0x6a4020);
-        rect(0, 8, 16, 5,  0xe8d4a0);
-        rect(0, 8, 16, 1,  0xf4e8b8);
+        rect(0, 6, 16, 2, 0x6a4020);
+        rect(0, 8, 16, 5, 0xe8d4a0);
+        rect(0, 8, 16, 1, 0xf4e8b8);
         rect(0, 13, 16, 3, 0xc4a060);
-        rect(1, 13, 2,  3, 0x5a3010);
+        rect(1, 13, 2, 3, 0x5a3010);
         rect(13, 13, 2, 3, 0x5a3010);
         // open magazine
-        rect(2, 9,  12, 7, 0xfaf6f0);
-        rect(7, 9,  2,  7, 0xd0c8b8);
-        rect(3, 10, 3,  1, 0xb0a898);
-        rect(3, 12, 4,  1, 0xb0a898);
-        rect(3, 14, 3,  1, 0xb0a898);
-        rect(9, 9,  4,  3, 0x8ab8c8);
-        rect(9, 13, 4,  1, 0xb0a898);
-        rect(9, 15, 3,  1, 0xb0a898);
+        rect(2, 9, 12, 7, 0xfaf6f0);
+        rect(7, 9, 2, 7, 0xd0c8b8);
+        rect(3, 10, 3, 1, 0xb0a898);
+        rect(3, 12, 4, 1, 0xb0a898);
+        rect(3, 14, 3, 1, 0xb0a898);
+        rect(9, 9, 4, 3, 0x8ab8c8);
+        rect(9, 13, 4, 1, 0xb0a898);
+        rect(9, 15, 3, 1, 0xb0a898);
         break;
       case COFFEE_MATCHA:
         rect(0, 0, 16, 16, 0xd4bc94);
-        rect(0, 6, 16, 2,  0x6a4020);
-        rect(0, 8, 16, 5,  0xe8d4a0);
-        rect(0, 8, 16, 1,  0xf4e8b8);
+        rect(0, 6, 16, 2, 0x6a4020);
+        rect(0, 8, 16, 5, 0xe8d4a0);
+        rect(0, 8, 16, 1, 0xf4e8b8);
         rect(0, 13, 16, 3, 0xc4a060);
-        rect(1, 13, 2,  3, 0x5a3010);
+        rect(1, 13, 2, 3, 0x5a3010);
         rect(13, 13, 2, 3, 0x5a3010);
         // saucer
         rect(3, 13, 10, 2, 0xf0ece4);
-        rect(4, 12, 8,  1, 0xe0dcd4);
+        rect(4, 12, 8, 1, 0xe0dcd4);
         // cup
-        rect(5, 9,  6,  5, 0xf0ece4);
-        rect(6, 9,  4,  4, 0xf8f4ec);
-        rect(6, 9,  4,  2, 0x7aaa48);
-        rect(6, 9,  4,  1, 0x9acc68);
+        rect(5, 9, 6, 5, 0xf0ece4);
+        rect(6, 9, 4, 4, 0xf8f4ec);
+        rect(6, 9, 4, 2, 0x7aaa48);
+        rect(6, 9, 4, 1, 0x9acc68);
         // steam
-        rect(7, 5,  1,  1, 0xd4e8d0);
-        rect(8, 4,  1,  1, 0xd4e8d0);
-        rect(7, 3,  1,  1, 0xd4e8d0);
-        rect(9, 6,  1,  1, 0xd4e8d0);
+        rect(7, 5, 1, 1, 0xd4e8d0);
+        rect(8, 4, 1, 1, 0xd4e8d0);
+        rect(7, 3, 1, 1, 0xd4e8d0);
+        rect(9, 6, 1, 1, 0xd4e8d0);
         break;
       default:
         return null;
@@ -673,7 +673,7 @@ export default class MuseumScene extends Phaser.Scene {
     };
 
     petSpeak(this.dog, ['woof!', '*sneeze*']);
-    petSpeak(this.cat, 'meowww');
+    petSpeak(this.cat, ['meowww', 'purr...', 'hissss!']);
   }
 
   // ── Player ────────────────────────────────────────────────────────────────
@@ -707,6 +707,9 @@ export default class MuseumScene extends Phaser.Scene {
   _setupCamera(width, height) {
     const mapPixW = MAP_W * TILE * SCALE;
     const mapPixH = MAP_H * TILE * SCALE;
+    // Zoom out on small screens so the full room is visible
+    const zoom = Math.min(1, width / mapPixW, height / mapPixH);
+    this.cameras.main.setZoom(zoom);
     this.cameras.main.setBounds(0, 0, mapPixW, mapPixH);
     this.cameras.main.startFollow(this.player, true, 0.08, 0.08);
     this.physics.world.setBounds(0, 0, mapPixW, mapPixH);
@@ -729,10 +732,12 @@ export default class MuseumScene extends Phaser.Scene {
     this.moveTimer -= delta;
     if (this.moveTimer > 0) return;
 
-    const up = this.cursors.up.isDown || this.wasd.up.isDown;
-    const down = this.cursors.down.isDown || this.wasd.down.isDown;
-    const left = this.cursors.left.isDown || this.wasd.left.isDown;
-    const right = this.cursors.right.isDown || this.wasd.right.isDown;
+    const dpad = window.dpadKeys || {};
+    const up = this.cursors.up.isDown || this.wasd.up.isDown || dpad.up;
+    const down = this.cursors.down.isDown || this.wasd.down.isDown || dpad.down;
+    const left = this.cursors.left.isDown || this.wasd.left.isDown || dpad.left;
+    const right =
+      this.cursors.right.isDown || this.wasd.right.isDown || dpad.right;
 
     let dx = 0,
       dy = 0,
@@ -794,8 +799,8 @@ export default class MuseumScene extends Phaser.Scene {
   _showToast(msg) {
     const t = this.add
       .text(
-        this.cameras.main.scrollX + this.scale.width / 2,
-        this.cameras.main.scrollY + this.scale.height - 30,
+        this.scale.width / 2,
+        this.scale.height - 30,
         msg,
         {
           fontFamily: '"Press Start 2P"',

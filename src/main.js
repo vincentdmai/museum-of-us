@@ -25,6 +25,9 @@ const config = {
 
 const game = new Phaser.Game(config);
 
+// Shared D-pad state read directly by MuseumScene
+window.dpadKeys = { up: false, down: false, left: false, right: false };
+
 // Mobile touch controls — D-pad overlay
 if (isMobile) {
   _buildDPad();
@@ -40,13 +43,13 @@ function _buildDPad() {
   `;
 
   const buttons = [
-    { label: '▲', row: 1, col: 2, key: 'ArrowUp' },
-    { label: '◀', row: 2, col: 1, key: 'ArrowLeft' },
-    { label: '▶', row: 2, col: 3, key: 'ArrowRight' },
-    { label: '▼', row: 3, col: 2, key: 'ArrowDown' },
+    { label: '▲', row: 1, col: 2, dir: 'up' },
+    { label: '◀', row: 2, col: 1, dir: 'left' },
+    { label: '▶', row: 2, col: 3, dir: 'right' },
+    { label: '▼', row: 3, col: 2, dir: 'down' },
   ];
 
-  buttons.forEach(({ label, row, col, key }) => {
+  buttons.forEach(({ label, row, col, dir }) => {
     const btn = document.createElement('button');
     btn.textContent = label;
     btn.style.cssText = `
@@ -57,34 +60,18 @@ function _buildDPad() {
       font-family:'Press Start 2P',monospace;
       -webkit-tap-highlight-color: transparent;
       touch-action: none;
+      user-select: none;
     `;
 
-    const fireKey = (down) => {
-      const evt = new KeyboardEvent(down ? 'keydown' : 'keyup', {
-        key,
-        bubbles: true,
-      });
-      document.dispatchEvent(evt);
-    };
+    const press = () => { window.dpadKeys[dir] = true; };
+    const release = () => { window.dpadKeys[dir] = false; };
 
-    btn.addEventListener(
-      'touchstart',
-      (e) => {
-        e.preventDefault();
-        fireKey(true);
-      },
-      { passive: false },
-    );
-    btn.addEventListener(
-      'touchend',
-      (e) => {
-        e.preventDefault();
-        fireKey(false);
-      },
-      { passive: false },
-    );
-    btn.addEventListener('mousedown', () => fireKey(true));
-    btn.addEventListener('mouseup', () => fireKey(false));
+    btn.addEventListener('touchstart', (e) => { e.preventDefault(); press(); }, { passive: false });
+    btn.addEventListener('touchend',   (e) => { e.preventDefault(); release(); }, { passive: false });
+    btn.addEventListener('touchcancel',(e) => { e.preventDefault(); release(); }, { passive: false });
+    btn.addEventListener('mousedown', press);
+    btn.addEventListener('mouseup', release);
+    btn.addEventListener('mouseleave', release);
     dpad.appendChild(btn);
   });
 
