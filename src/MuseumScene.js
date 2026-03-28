@@ -624,7 +624,7 @@ export default class MuseumScene extends Phaser.Scene {
       const lbl = this.add
         .text(sprite.x, sprite.y - 20 * SCALE * 0.5, name, {
           fontFamily: '"Press Start 2P"',
-          fontSize: '6px',
+          fontSize: this.scale.width <= 480 ? '8px' : '6px',
           color: '#f0d898',
           stroke: '#000',
           strokeThickness: 2,
@@ -652,7 +652,7 @@ export default class MuseumScene extends Phaser.Scene {
         const bubble = this.add
           .text(sprite.x, sprite.y - 28 * SCALE * 0.5, msg, {
             fontFamily: '"Press Start 2P"',
-            fontSize: '7px',
+            fontSize: this.scale.width <= 480 ? '10px' : '7px',
             color: '#ffffff',
             stroke: '#000000',
             strokeThickness: 3,
@@ -804,7 +804,7 @@ export default class MuseumScene extends Phaser.Scene {
         msg,
         {
           fontFamily: '"Press Start 2P"',
-          fontSize: '8px',
+          fontSize: this.scale.width <= 480 ? '11px' : '8px',
           color: '#f0d898',
           stroke: '#000',
           strokeThickness: 3,

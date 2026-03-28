@@ -11,6 +11,7 @@ export default class CharacterSelect extends Phaser.Scene {
   create() {
     const { width, height } = this.scale;
     const cx = width / 2;
+    const isMobile = width <= 480;
 
     // ── Background ──────────────────────────────────────────────────────────
     const bg = this.add.graphics();
@@ -45,7 +46,7 @@ export default class CharacterSelect extends Phaser.Scene {
     this.add
       .text(cx, 28, '✦ MUSEUM OF US ✦', {
         fontFamily: '"Press Start 2P"',
-        fontSize: '10px',
+        fontSize: isMobile ? '12px' : '10px',
         color: '#f0d898',
         stroke: '#8b6b30',
         strokeThickness: 3,
@@ -55,7 +56,7 @@ export default class CharacterSelect extends Phaser.Scene {
     this.add
       .text(cx, 46, 'choose your character', {
         fontFamily: '"Press Start 2P"',
-        fontSize: '6px',
+        fontSize: isMobile ? '8px' : '6px',
         color: '#c0a060',
       })
       .setOrigin(0.5, 0);
@@ -101,7 +102,7 @@ export default class CharacterSelect extends Phaser.Scene {
       this.add
         .text(cx2, cardY + cardH - 44, ch.label, {
           fontFamily: '"Press Start 2P"',
-          fontSize: '9px',
+          fontSize: isMobile ? '11px' : '9px',
           color: '#' + ch.accent.toString(16).padStart(6, '0'),
           stroke: '#000',
           strokeThickness: 2,
@@ -111,7 +112,7 @@ export default class CharacterSelect extends Phaser.Scene {
       this.add
         .text(cx2, cardY + cardH - 28, ch.sub, {
           fontFamily: '"Press Start 2P"',
-          fontSize: '6px',
+          fontSize: isMobile ? '8px' : '6px',
           color: '#8878a8',
         })
         .setOrigin(0.5);
@@ -126,7 +127,7 @@ export default class CharacterSelect extends Phaser.Scene {
       const btnText = this.add
         .text(cx2, cardY + cardH - 8, 'SELECT ▶', {
           fontFamily: '"Press Start 2P"',
-          fontSize: '7px',
+          fontSize: isMobile ? '9px' : '7px',
           color: '#ffffff',
         })
         .setOrigin(0.5);
@@ -167,7 +168,7 @@ export default class CharacterSelect extends Phaser.Scene {
     const prompt = this.add
       .text(cx, height - 22, '↑↓←→ MOVE   CLICK PAINTINGS TO REMEMBER ♥', {
         fontFamily: '"Press Start 2P"',
-        fontSize: '5px',
+        fontSize: isMobile ? '7px' : '5px',
         color: '#6a5878',
       })
       .setOrigin(0.5);
