@@ -15,6 +15,7 @@ const config = {
   pixelArt: true,
   antialias: false,
   roundPixels: true,
+  resolution: window.devicePixelRatio || 1,
   parent: 'game-container',
   physics: {
     default: 'arcade',
